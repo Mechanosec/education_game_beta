@@ -1,4 +1,4 @@
-import GameScene from "./scene/game.js";
+import Level1 from "./scene/level1.js";
 
 export let config = {
     type: Phaser.CANVAS,
@@ -6,5 +6,5 @@ export let config = {
     height: 720,
     parent: 'game-place',
     backgroundColor: 0xFFFF44,
-    scene: [GameScene]
+    scene: [Level1]
 };
