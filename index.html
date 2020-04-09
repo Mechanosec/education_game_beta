@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>My Game</title>
+</head>
+<body>
+<input type="button" value="RUN" id="run_script">
+<textarea cols="50" rows="10" id="game_commands">
+    for(let i=0; i<5; i++) {
+        hero.right();
+    }
+</textarea>
+<div id="game-place"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="engine/phaser.js"></script>
+<script src="scripts/main.js" type="module"></script>
+</body>
+</html>
