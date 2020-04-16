@@ -1,9 +1,11 @@
 import GameLevel from "./gameLevel.js";
 import Person from "../claasses/person.js";
+import HeroSource from "../source/hero.js";
 
 export default class Level1 extends GameLevel {
     constructor() {
         super('playGame');
+        this.heroSource = new HeroSource('hero', {name: 'human', frameWidth: 66, frameHeight: 65,}, this);
     }
 
     initGround() {
@@ -24,26 +26,25 @@ export default class Level1 extends GameLevel {
     }
 
     preload() {
-        this.load.spritesheet('hero', '../../sprites/human.png', {frameWidth: 66, frameHeight: 65});
-        this.load.spritesheet('enemy', '../../sprites/human.png', {frameWidth: 66, frameHeight: 65});
+        this.heroSource.preloadSprite();
         // this.load.spritesheet('hero', '../../sprites/hero.png', {frameWidth: 80, frameHeight: 94});
 
     }
 
     create() {
         this.initGround();
-        this.hero = new Person(this, 0, 0, 'hero');
+        this.hero = new Person(this, 0, 0, 'hero', this.heroSource.initAnimation);
         this.add.existing(this.hero);
         this.hero.setDebug();
 
-        this.enemy = new Person(this, 66, 0, 'enemy');
-        this.add.existing(this.enemy);
-        this.enemy.setDebug();
+        // this.enemy = new Person(this, 66, 0, 'enemy', initHero);
+        // this.add.existing(this.enemy);
+        // this.enemy.setDebug();
     }
 
     update() {
         this.hero.listener();
-        this.enemy.listener();
+        // this.enemy.listener();
     }
 
     render() {

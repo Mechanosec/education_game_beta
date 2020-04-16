@@ -1,10 +1,10 @@
 export default class GameObject extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, texture) {
+    constructor(scene, x, y, texture, initAnimation) {
         super(scene, x, y, texture);
         this.realHeight = this.height / 2;
         this.setOrigin(0, 0);
 
-        this.scene.mainObjects.push(texture);
+        // this.scene.mainObjects.push(texture);
         this.frameRate = 6;
         this.speed = 5;
         this.step = 1; //количество чанков которые может пройти персонаж за 1 евент
@@ -13,6 +13,8 @@ export default class GameObject extends Phaser.GameObjects.Sprite {
         this.moveToX = []; //массив координат X, к которым должен прийти персонаж
         this.moveToY = []; //массив координат Y, к которым должен прийти персонаж
         this.playAnimation = false; //переменная отвечающая за то находится ли персонаж в движении
+
+        initAnimation(this);
     }
 
     setDebug() {

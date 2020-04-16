@@ -1,59 +1,10 @@
 import GameObject from "./object.js";
 
 export default class Person extends GameObject {
-    constructor(scene, x, y, texture) {
-        super(scene, x, y, texture);
-        this.createAnimation();
+    constructor(scene, x, y, texture, initAnimation) {
+        super(scene, x, y, texture, initAnimation);
 
         this.play('standFront');
-    }
-
-    createAnimation() {
-        this.scene.anims.create({
-            key: 'standDown',
-            frames: this.scene.anims.generateFrameNumbers(this.texture.key, {start: 0, end: 0}),
-            frameRate: this.frameRate,
-        });
-        this.scene.anims.create({
-            key: 'runDown',
-            frames: this.scene.anims.generateFrameNumbers(this.texture.key, {start: 0, end: 3}),
-            frameRate: this.frameRate,
-            repeat: -1
-        });
-        this.scene.anims.create({
-            key: 'standLeft',
-            frames: this.scene.anims.generateFrameNumbers(this.texture.key, {start: 4, end: 4}),
-            frameRate: this.frameRate,
-        });
-        this.scene.anims.create({
-            key: 'runLeft',
-            frames: this.scene.anims.generateFrameNumbers(this.texture.key, {start: 4, end: 7}),
-            frameRate: this.frameRate,
-            repeat: -1
-        });
-        this.scene.anims.create({
-            key: 'standRight',
-            frames: this.scene.anims.generateFrameNumbers(this.texture.key, {start: 8, end: 8}),
-            frameRate: this.frameRate,
-        });
-        this.scene.anims.create({
-            key: 'runRight',
-            frames: this.scene.anims.generateFrameNumbers(this.texture.key, {start: 8, end: 11}),
-            frameRate: this.frameRate,
-            repeat: -1
-        });
-        this.scene.anims.create({
-            key: 'standUp',
-            frames: this.scene.anims.generateFrameNumbers(this.texture.key, {start: 12, end: 12}),
-            frameRate: this.frameRate,
-        });
-        this.scene.anims.create({
-            key: 'runUp',
-            frames: this.scene.anims.generateFrameNumbers(this.texture.key, {start: 12, end: 15}),
-            frameRate: this.frameRate,
-            repeat: -1
-        });
-
     }
 
     /**
