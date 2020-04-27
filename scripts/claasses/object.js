@@ -4,7 +4,7 @@ export default class GameObject extends Phaser.GameObjects.Sprite {
         this.realHeight = this.height / 2;
         this.setOrigin(0, 0);
 
-        // this.scene.mainObjects.push(texture);
+        this.scene.mainObjects.push(texture);
         this.frameRate = 6;
         this.speed = 5;
         this.step = 1; //количество чанков которые может пройти персонаж за 1 евент

@@ -85,6 +85,7 @@ export default class Person extends GameObject {
         let currentY = this.calcMoveToY();
         if (currentY < this.scene.game.config.height - (this.realHeight / 2)) { //проверка на край приложения
             this.moveToY.push(currentY + (this.step * this.realHeight));
+            console.log(currentY + (this.step * this.realHeight));
             this.events.push('down');
             this.lastEvent = 'Down';
         }

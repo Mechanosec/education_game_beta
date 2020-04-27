@@ -9,7 +9,7 @@ export default class Level1 extends GameLevel {
     }
 
     initGround() {
-        var rect = new Phaser.Geom.Rectangle(0, 0, 66, 32);
+        var rect = new Phaser.Geom.Rectangle(0, 0, 66, 32.5);
         var graphics = this.add.graphics({lineStyle: {width: 1, color: 0x000000}});
         for (let j = 0; j < 14; j++) {
             for (let i = 0; i < 16; i++) {

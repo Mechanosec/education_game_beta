@@ -6,6 +6,7 @@ export default class HeroSource extends InitSource {
     }
 
     initAnimation(gameObject) {
+        console.log(gameObject.scene);
         gameObject.scene.anims.create({
             key: 'standDown',
             frames: gameObject.scene.anims.generateFrameNumbers(gameObject.texture.key, {start: 0, end: 0}),
